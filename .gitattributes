@@ -1,0 +1,30 @@
+Option: opt   type  description
+        -a   file   the filename of read a [forced]
+        -b   file   the filename of read b [optional]
+        -o   dir     the outdir [forced]
+        -f      str     the prefix of output [forced]
+        -q      double  the percent cutoff of good quality base [0.3,1.0] [optional] [default 0.8]
+        -w      int     low quality cutoff [optional] [default 30]
+        -Q      int     quality shift for different plotform [optional] [default 64]
+        -h      none    Help
+[2]To remove reads with poly-N:
+Example: ./fastq_filter_by_Ns -a read_a.fq -b read_b.fq -u 0.05
+Option: opt     type    description
+        -a      file    the filename of read a [forced]
+        -b      file    the filename of read b [optional]
+        -c      file    the outfilename of quality filter read a [optional] [default *.Ns.fq]
+        -d      file    the outfilename of quality filter read b [optional] [default *.Ns.fq]
+        -u      double  the percent cutoff of unknown base [0.0,1.0] [optional] [default 0.05]
+        -h      none    Help
+[3]Statistics of quality control: 
+Example: ./fastq_qc_stat -a read_a.fq -b read_b.fq -f out_prefix -Q 33
+Option: opt     type    description
+        -a      file    the filename of read a [forced]
+        -b      file    the filename of read b [optional]
+        -f      string  the prefix for output file [forced]
+        -m      int     the max length for array (it must >= read max length) [optional] [default 512]
+        -Q      int     quality shift for different plotform [optional] [default 33]
+        -q      int     the max quality score [optional] [default 41]
+        -s      int     the start site of stat region [optional] [default 0]
+        -e      int     the end site of stat region [optional] [default 10000]
+        -h      none    Help
